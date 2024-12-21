@@ -13,7 +13,7 @@ interface WeatherApiService {
     ) : Weather
 
     companion object{
-        val URL = "https://api.openweathermap.org"
+        val BASE_URL = "https://api.openweathermap.org"
         val API_KEY = "4ecb5a67cb608b867bd177e90bb968e9"
     }
 }

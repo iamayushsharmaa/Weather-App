@@ -1,4 +1,4 @@
-package com.example.weather.domain
+package com.example.weather.data.model
 
 sealed class Resource<out T> {
     object Loading : Resource<Nothing>()

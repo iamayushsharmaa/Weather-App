@@ -1,4 +1,4 @@
-package com.example.weather.presentation
+package com.example.weather.data.model
 
 sealed class UiState<out T> {
     object Loading : UiState<Nothing>()

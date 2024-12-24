@@ -231,7 +231,7 @@ fun NightSmallCard(
                 fontFamily = poppinsFontFamily,
                 fontWeight = FontWeight.Light,
                 fontSize = 12.sp,
-                modifier = Modifier.padding(top = 20.dp,)
+                modifier = Modifier.padding(top = 16.dp,)
             )
 
         }

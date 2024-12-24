@@ -25,6 +25,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 import javax.inject.Inject
 @HiltViewModel
@@ -70,6 +72,12 @@ class WeatherViewModel @Inject constructor(
         val geocoder = Geocoder(context, Locale.getDefault())
         val addresses = geocoder.getFromLocation(latitude, longitude, 1)
         return addresses?.firstOrNull()?.locality
+    }
+
+    fun formatUnixTimestamp(timestamp: Long): String {
+        val date = Date(timestamp * 1000) // Convert from seconds to milliseconds
+        val sdf = SimpleDateFormat("hh:mm a", Locale.getDefault()) // Format the time (e.g., "06:30 AM")
+        return sdf.format(date)
     }
 }
 

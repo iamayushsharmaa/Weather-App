@@ -38,6 +38,7 @@ import com.example.weather.R
 import com.example.weather.data.model.UiState
 import com.example.weather.data.remote.respond.Weather
 import com.example.weather.presentation.component.DayBigCard
+import com.example.weather.presentation.component.DetailCard
 import com.example.weather.presentation.component.NightSmallCard
 import com.example.weather.presentation.component.ShimmerEffect
 import com.example.weather.ui.theme.poppinsFontFamily
@@ -131,7 +132,7 @@ fun Home(
                             )
                         }
                         item {
-
+                            DetailCard(weather)
                         }
                     }
                 }

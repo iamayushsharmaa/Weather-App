@@ -21,8 +21,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -133,19 +131,19 @@ fun DayBigCard(
                     .padding(5.dp),
                 verticalAlignment = Alignment.CenterVertically
             ){
-                WeatherAddtionalInfo(
+                WeatherAdditionalInfo(
                     modifier = Modifier.padding(5.dp),
-                    weatherDetailName = "Pressure",
-                    weatherDetailValue = "${weather.main.pressure}",
-                    weatherDetailValueUnit ="N/m2",
+                    weatherDetailName = "Wind now",
+                    weatherDetailValue = "${weather.wind.speed}",
+                    weatherDetailValueUnit ="km",
                 )
-                WeatherAddtionalInfo(
+                WeatherAdditionalInfo(
                     modifier = Modifier.padding(5.dp),
                     weatherDetailName = "Humidity",
                     weatherDetailValue = "${weather.main.humidity}",
                     weatherDetailValueUnit = "%"
                 )
-                WeatherAddtionalInfo(
+                WeatherAdditionalInfo(
                     modifier = Modifier.padding(5.dp),
                     weatherDetailName = "Sea level",
                     weatherDetailValue = "${weather.main.sea_level}",
@@ -238,7 +236,7 @@ fun NightSmallCard(
     }
 }
 @Composable
-fun WeatherAddtionalInfo(
+fun WeatherAdditionalInfo(
     modifier: Modifier = Modifier,
     weatherDetailName : String,
     weatherDetailValue : String,
@@ -283,7 +281,5 @@ fun WeatherAddtionalInfo(
                     .padding(bottom = 5.dp)
             )
         }
-
-
     }
 }

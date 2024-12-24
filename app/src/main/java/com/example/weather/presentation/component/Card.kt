@@ -136,17 +136,20 @@ fun DayBigCard(
                 WeatherAddtionalInfo(
                     modifier = Modifier.padding(5.dp),
                     weatherDetailName = "Pressure",
-                    weatherDetailValue = "${weather.main.pressure}"
+                    weatherDetailValue = "${weather.main.pressure}",
+                    weatherDetailValueUnit ="N/m2",
                 )
                 WeatherAddtionalInfo(
                     modifier = Modifier.padding(5.dp),
                     weatherDetailName = "Humidity",
-                    weatherDetailValue = "${weather.main.humidity}"
+                    weatherDetailValue = "${weather.main.humidity}",
+                    weatherDetailValueUnit = "%"
                 )
                 WeatherAddtionalInfo(
                     modifier = Modifier.padding(5.dp),
                     weatherDetailName = "Sea level",
-                    weatherDetailValue = "${weather.main.sea_level}"
+                    weatherDetailValue = "${weather.main.sea_level}",
+                    weatherDetailValueUnit = "MSL"
                 )
             }
         }
@@ -214,8 +217,6 @@ fun NightSmallCard(
                     modifier = Modifier.align(Alignment.Bottom),
                     textAlign = TextAlign.Center
                 )
-
-
                 Text(
                     text = "°",
                     fontSize = 62.sp,
@@ -240,7 +241,8 @@ fun NightSmallCard(
 fun WeatherAddtionalInfo(
     modifier: Modifier = Modifier,
     weatherDetailName : String,
-    weatherDetailValue : String
+    weatherDetailValue : String,
+    weatherDetailValueUnit : String
 ) {
     Column (
         modifier = Modifier
@@ -256,17 +258,32 @@ fun WeatherAddtionalInfo(
             modifier = Modifier
                 .fillMaxWidth()
         )
-        Text(
-            text = weatherDetailValue,
-            fontSize = 32.sp,
-            textAlign = TextAlign.Center,
-            fontFamily = poppinsFontFamily,
-            fontWeight = FontWeight.Bold,
-            color = Color.White,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(5.dp)
-        )
+        Row(
+            verticalAlignment = Alignment.Bottom, // Align the degree symbol to the top of the temperature text
+            horizontalArrangement = Arrangement.Center, // Center horizontally
+            modifier = Modifier.fillMaxWidth().padding(top = 5.dp)
+        ) {
+            Text(
+                text = weatherDetailValue,
+                fontSize = 32.sp,
+                textAlign = TextAlign.Center,
+                fontFamily = poppinsFontFamily,
+                fontWeight = FontWeight.Bold,
+                color = Color.White,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(5.dp)
+            )
+            Text(
+                text = weatherDetailValueUnit,
+                fontSize = 26.sp,
+                color = Color.White.copy(alpha = 0.7f),
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.align(Alignment.Bottom)
+                    .padding(bottom = 5.dp)
+            )
+        }
+
 
     }
 }

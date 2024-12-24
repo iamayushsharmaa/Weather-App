@@ -172,7 +172,6 @@ fun NightSmallCard(
         Column(
             modifier = Modifier
                 .fillMaxSize(),
-           // verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Row(
